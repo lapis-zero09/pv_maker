@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'videos/show'
+
   root to: 'pvs#index'
   resources :picture_stores
   resources :pvs
