@@ -25,15 +25,7 @@
 <!-- その場で再生 -->
 <%= video_tag(@video.video_url.to_s, :autoplay => true, :loop => true) %>
 
-<!-- クリックしたら再生 -->
-<%= link_to @video, @video.video_url.to_s, id: "video" %>
-<%= flowplayer_for :video, '/flowplayer.swf' do |player|
-  player.playlist [{:autoplay => true,
-                    :autoBuffering => true}]
-  player.onload do
-    'this.unmute();'
-  end
-end%>
+
 
 <%= link_to 'Edit', edit_video_path(@video) %> |
 <%= link_to 'Back', videos_path %>
